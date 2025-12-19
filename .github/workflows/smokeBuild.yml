@@ -1,14 +1,17 @@
 name: Smoke End-to-end tests
-on: push
+
+on:
+  push:
+
 jobs:
   cypress-run:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
+        uses: actions/checkout@v4
+
+      - name: Cypress run (Smoke)
         uses: cypress-io/github-action@v6
         with:
-        command: npm run test:internetLoginPage
+          command: npm run test:internetLoginPage
