@@ -19,7 +19,7 @@ describe ('Internet login flows',() =>{
         secureAreaPageEts.assertPageHeader(testData.header.pageHeader)
     })
 
-    it.skip('Successful login to Internet with custom command', () => {
+    it('Successful login to Internet with custom command', () => {
         cy.login()
     })
 
