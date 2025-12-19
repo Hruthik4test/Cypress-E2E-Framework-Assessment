@@ -1,0 +1,12 @@
+{
+  "messages" : 
+  {
+    "expectedSuccessMessage": "You logged into a secure area!",
+    "expectedErrorMessage": "Your username is invalid!"
+  },
+  "header" :
+  {
+    "pageHeader": "Secure Area"
+  }
+  
+}

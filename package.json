@@ -1,0 +1,25 @@
+{
+  "name": "cypress-e2e-framework-assessment",
+  "version": "1.0.0",
+  "description": "Cypress E2E Automation Framework Assessment",
+  "homepage": "https://github.com/Hruthik4test/Cypress-E2E-Framework-Assessment#readme",
+  "bugs": {
+    "url": "https://github.com/Hruthik4test/Cypress-E2E-Framework-Assessment/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hruthik4test/Cypress-E2E-Framework-Assessment.git"
+  },
+  "license": "ISC",
+  "author": "Hruthik",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test:internetLoginPage": "npx cypress run --spec cypress/e2e/tests/internetLoginPage.cy.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cypress": "^15.8.1",
+    "cypress-mochawesome-reporter": "^4.0.2"
+  }
+}
