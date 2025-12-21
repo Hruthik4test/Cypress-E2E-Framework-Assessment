@@ -10,7 +10,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: Cypress run (Smoke)
         uses: cypress-io/github-action@v6
         with:
           command: npx cypress run --env grepTags=@smoke
+
+      - name: Upload Mochawesome Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report
+          path: cypress/reports
