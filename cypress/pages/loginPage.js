@@ -3,10 +3,12 @@ export class loginPage {
     userName = "#username"
     password = "#password"
     loginButton = "button.radius"
+    logoutMessage = "#flash"
     errorMessage = "#flash-messages"
 
+
     openInternetURL() {
-        cy.visit(Cypress.env('URL'))
+        cy.visit('/login')
     }
 
     enterUserName(herokuUserName) {
@@ -19,6 +21,11 @@ export class loginPage {
 
     clickOnLogin() {
         cy.get(this.loginButton).click()
+    }
+
+    assertLogoutMessage(expectedMessage) {
+        cy.get(this.logoutMessage).should('be.visible')
+        .and('contain.text', expectedMessage)
     }
 
     assertErrorMessage(expectedMessage) {

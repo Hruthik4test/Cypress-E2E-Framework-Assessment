@@ -33,3 +33,23 @@ Cypress.Commands.add('login', () => {
     loginPageElements.enterPassword(Cypress.env('password'))
     loginPageElements.clickOnLogin()
 })
+
+Cypress.Commands.add('apiGet', (endpoint) => {
+  return cy.request({
+    method: 'GET',
+    url: `${Cypress.env('apiUrl')}${endpoint}`,
+    failOnStatusCode: false
+  })
+})
+
+Cypress.Commands.add('apiPost', (endpoint, payload) => {
+  return cy.request({
+    method: 'POST',
+    url: `${Cypress.env('apiUrl')}${endpoint}`,
+    body: payload,
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+})
+

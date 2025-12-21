@@ -1,7 +1,12 @@
 export class secureAreaPage {
 
     successMessage = "#flash-messages"
-    pageHeader= "#content"
+    pageHeader = "#content"
+    logoutButton = "a.button.secondary.radius"
+
+    clickOnLogoutButton() {
+        cy.get(this.logoutButton).click()
+    }
 
     assertsuccessMessage(expectedMessage) {
         cy.get(this.successMessage).should('be.visible')

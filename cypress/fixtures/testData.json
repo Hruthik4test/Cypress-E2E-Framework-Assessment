@@ -2,7 +2,8 @@
   "messages" : 
   {
     "expectedSuccessMessage": "You logged into a secure area!",
-    "expectedErrorMessage": "Your username is invalid!"
+    "expectedErrorMessage": "Your username is invalid!",
+    "expectedLogoutMessge" : "You logged out of the secure area!"
   },
   "header" :
   {

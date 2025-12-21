@@ -4,13 +4,17 @@ module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   video: true,
   screenshotOnRunFailure: true,
+
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-      require('cypress-mochawesome-reporter/plugin')(on);
+    baseUrl: 'https://the-internet.herokuapp.com',
+
+    env: {
+      apiUrl: 'https://jsonplaceholder.typicode.com'
     },
-  },
-  env:{
-    URL: 'https://the-internet.herokuapp.com/login'
+
+    setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
+      return config;
+    }
   }
 });
