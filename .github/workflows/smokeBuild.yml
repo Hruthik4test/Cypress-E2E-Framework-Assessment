@@ -1,7 +1,6 @@
 name: Smoke End-to-end tests
 
-on:
-  push:
+on: push
 
 jobs:
   cypress-run:
@@ -14,4 +13,4 @@ jobs:
       - name: Cypress run (Smoke)
         uses: cypress-io/github-action@v6
         with:
-          command: npm run test:internetLoginPage
+          command: npx cypress run --env grepTags=@smoke

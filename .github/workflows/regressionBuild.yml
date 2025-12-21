@@ -1,0 +1,19 @@
+name: Regression End-to-end tests
+
+on: push
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cypress run (Regression)
+        uses: cypress-io/github-action@v6
+        with:
+          command: npx cypress run --env grepTags=@regression
