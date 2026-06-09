@@ -1,4 +1,4 @@
-export class secureAreaPage {
+class secureAreaPage {
 
     successMessage = "#flash-messages"
     pageHeader = "#content"
@@ -18,3 +18,4 @@ export class secureAreaPage {
         .and('contain.text', expectedMessage)
     }
 }
+export default new secureAreaPage()

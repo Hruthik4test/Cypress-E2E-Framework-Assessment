@@ -1,5 +1,4 @@
-import { loginPage } from "../pages/loginPage"
-const loginPageElements = new loginPage();
+import loginPage from "../pages/loginPage";
 
 // ***********************************************
 // This example commands.js shows you how to
@@ -28,10 +27,10 @@ const loginPageElements = new loginPage();
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', () => {
-    loginPageElements.openInternetURL()
-    loginPageElements.enterUserName(Cypress.env('username'))
-    loginPageElements.enterPassword(Cypress.env('password'))
-    loginPageElements.clickOnLogin()
+    loginPage.openInternetURL()
+    loginPage.enterUserName(Cypress.env('username'))
+    loginPage.enterPassword(Cypress.env('password'))
+    loginPage.clickOnLogin()
 })
 
 Cypress.Commands.add('apiGet', (endpoint) => {

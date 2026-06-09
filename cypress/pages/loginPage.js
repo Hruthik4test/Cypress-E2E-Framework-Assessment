@@ -1,4 +1,4 @@
-export class loginPage {
+class loginPage {
 
     userName = "#username"
     password = "#password"
@@ -34,3 +34,4 @@ export class loginPage {
     }
 
 }
+export default new loginPage()
